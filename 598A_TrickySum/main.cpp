@@ -3,21 +3,20 @@
  * Author: Heidy Tamayo
  * Created on March 10, 2016, 2:17 PM
  * Purpose: Elephant Problem
- * //An elephant decided to visit his friend. It turned out that the elephant's 
- * house is located at point 0 and his friend's house is located at point x(x > 0)
- * of the coordinate line. In one step the elephant can move 1, 2, 3, 4 or 5 
- * positions forward. Determine, what is the minimum number of steps he need to 
- * make in order to get to his friend's house.
+ * //In this problem you are to calculate the sum of all integers from 1 to n, 
+ * but you should take all powers of two with minus in the sum.
+ *For example, for n = 4 the sum is equal to  - 1 - 2 + 3 - 4 =  - 4,
+ *because 1, 2 and 4 are 20, 21 and 22 respectively.
+ *Calculate the answer for t values of n.
  *Input
- *The first line of the input contains an integer x (1 ≤ x ≤ 1 000 000) — The 
- *coordinate of the friend's house.
- *Output
- *Print the minimum number of steps that elephant needs to make to get from 
- *point 0 to point x.
+ *The first line of the input contains a single integer t (1 ≤ t ≤ 100) — the
+ * number of values of n to be processed.
+ * Each of next t lines contains a single integer n (1 ≤ n ≤ 109).
  */
 
 //System Libraries
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 //User Libraries
@@ -30,15 +29,24 @@ using namespace std;
 int main(int argc, char** argv) {
 
     //Declare and Initialize the Variables
-    int x;
-    cin>>x;
-    int coordin=x/5;
-    
-    if(x%5!=0)
+    long long n;
+    int t;
+    cin>>t;
+
+    for(int i=0;i<t;i++)
     {
-        coordin++;
+       cin>>n;
+       int p=log2(n);
+       n=((1+n)*n)/2;
+       int x=2;
+       for(int j=0;j<=p;j++)
+       {
+           n-=x;
+           x*=2;
+       }
+       cout<<n<<endl;
     }
-    cout<<coordin<<endl;
+    
     return 0;
 }
 

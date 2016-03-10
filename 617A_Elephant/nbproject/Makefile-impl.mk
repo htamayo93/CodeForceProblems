@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Elephant_Problem
+PROJECTNAME=617A_Elephant
 
 # Active Configuration
 DEFAULTCONF=Debug
