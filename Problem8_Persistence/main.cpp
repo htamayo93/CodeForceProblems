@@ -23,26 +23,20 @@ int main(int argc, char** argv) {
     {
         while(num>=10)
         {
-          time2=num%10;
-          time1=time1*time2;
-          num=num/10;
-          if (num<10)
+          while(num>=10)
           {
-              time1=num*time1;
-              num=time1;
-              time1=1;
+              time2=num%10;
+              time1=time1*time2;
+              num=num/10;
           }
+          time1=num*time1;
+          num=time1; 
+          time1=1;
           count++;
-          
         }
         
         cout<<count<<endl;
     }
     
-    
-    
-    
     return 0;
-    
 }
-
